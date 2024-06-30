@@ -7,4 +7,7 @@ PacketLib is a library for sending and receiving C# objects over a network conne
 ```{toctree}
 
 usage
+transmitters
+packets
+packetregistry
 ```
