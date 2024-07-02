@@ -15,8 +15,11 @@ extensions = [
     'sphinx.ext.duration',
     'sphinx.ext.doctest',
     'sphinx.ext.intersphinx',
-    'myst_parser',
+    'sphinx_tabs.tabs',
+    'sphinx.ext.autosectionlabel',
 ]
+
+sphinx_tabs_disable_tab_closing = True
 
 intersphinx_mapping = {
     'python': ('https://docs.python.org/3/', None),
