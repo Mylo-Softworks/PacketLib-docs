@@ -11,23 +11,25 @@ Usage
 Starting a server
 *****************
 
-.. code-block:: csharp
+.. tabs::
+    .. code-tab:: csharp
 
-    using PacketLib.Base; // Client and server classes
-    using PacketLib.Transmitters; // Default transmitters
+        using PacketLib.Base; // Client and server classes
+        using PacketLib.Transmitters; // Default transmitters
 
-    var server = new NetworkServer<TcpTransmitter>(reg); // Creates a tcp server
+        var server = new NetworkServer<TcpTransmitter>(reg); // Creates a tcp server
 
 
 Starting a client
 *****************
 
-.. code-block:: csharp
+.. tabs::
+    .. code-tab:: csharp
 
-    using PacketLib.Base; // Client and server classes
-    using PacketLib.Transmitters; // Default transmitters
+        using PacketLib.Base; // Client and server classes
+        using PacketLib.Transmitters; // Default transmitters
 
-    var server = new NetworkClient<TcpTransmitter>(reg); // Creates a tcp client
+        var server = new NetworkClient<TcpTransmitter>(reg); // Creates a tcp client
 
 
 Polling
@@ -38,15 +40,17 @@ Polling
 
 Polling the server.
 
-.. code-block:: csharp
+.. tabs::
+    .. code-tab:: csharp
 
-    server.Poll();
+        server.Poll();
 
 Polling the client.
 
-.. code-block:: csharp
+.. tabs::
+    .. code-tab:: csharp
     
-    client.Poll();
+        client.Poll();
 
 
 Sending packets
@@ -55,9 +59,10 @@ Sending packets
 Client to server
 ================
 
-.. code-block:: csharp
+.. tabs::
+    .. code-tab:: csharp
     
-    client.Send(packet);
+        client.Send(packet);
 
 
 Server to client
@@ -65,23 +70,26 @@ Server to client
 
 With client Guid
 
-.. code-block:: csharp
+.. tabs::
+    .. code-tab:: csharp
 
-    server.SendToClient(packet, Guid);
+        server.SendToClient(packet, Guid);
 
 With ClientRef object
 
-.. code-block:: csharp
+.. tabs::
+    .. code-tab:: csharp
 
-    clientRef.Send(packet);
+        clientRef.Send(packet);
 
 
 Server to all clients
 =====================
 
-.. code-block:: csharp
+.. tabs::
+    .. code-tab:: csharp
     
-    server.SendToAll(packet);
+        server.SendToAll(packet);
 
 
 Events
@@ -92,21 +100,23 @@ Client connected
 
 From server side.
 
-.. code-block:: csharp
+.. tabs::
+    .. code-tab:: csharp
     
-    server.ClientConnected += (sender, @ref) =>
-    {
-        Console.WriteLine($"[Server] Client connected: {@ref.Guid}!");
-    };
+        server.ClientConnected += (sender, @ref) =>
+        {
+            Console.WriteLine($"[Server] Client connected: {@ref.Guid}!");
+        };
 
 From client side.
 
-.. code-block:: csharp
+.. tabs::
+    .. code-tab:: csharp
 
-    client.ClientConnected += (sender, guid) =>
-    {
-        Console.WriteLine($"[Client] Client connected! {guid}");
-    };
+        client.ClientConnected += (sender, guid) =>
+        {
+            Console.WriteLine($"[Client] Client connected! {guid}");
+        };
 
 
 Client disconnected
@@ -114,18 +124,20 @@ Client disconnected
 
 From server side.
 
-.. code-block:: csharp
+.. tabs::
+    .. code-tab:: csharp
     
-    server.ClientDisconnected += (sender, @ref) =>
-    {
-        Console.WriteLine($"[Server] Client disconnected! {@ref.Guid}!");
-    };
+        server.ClientDisconnected += (sender, @ref) =>
+        {
+            Console.WriteLine($"[Server] Client disconnected! {@ref.Guid}!");
+        };
 
 From client side.
 
-.. code-block:: csharp
+.. tabs::
+    .. code-tab:: csharp
 
-    client.ClientDisconnected += (sender, _) =>
-    {
-        Console.WriteLine($"[Client] Client disconnected!");
-    };
+        client.ClientDisconnected += (sender, _) =>
+        {
+            Console.WriteLine($"[Client] Client disconnected!");
+        };

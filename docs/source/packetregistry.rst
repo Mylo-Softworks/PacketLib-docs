@@ -11,31 +11,34 @@ Automatic
 
 You can register an entire assembly automatically using `RegisterAssembly()`.
 
-.. code-block:: csharp
+.. tabs::
+    .. code-tab:: csharp
 
-    using PacketLib.Packet;
+        using PacketLib.Packet;
 
-    var reg = new PacketRegistry();
-    reg.RegisterAssembly(Assembly.GetExecutingAssembly());
+        var reg = new PacketRegistry();
+        reg.RegisterAssembly(Assembly.GetExecutingAssembly());
 
 Manual
 ======
 You can register individual packets using `RegisterPacket()`.
 
-.. code-block:: csharp
+.. tabs::
+    .. code-tab:: csharp
 
-    using PacketLib.Packet;
+        using PacketLib.Packet;
 
-    var reg = new PacketRegistry();
-    reg.RegisterPacket(typeof(ExamplePacket));
+        var reg = new PacketRegistry();
+        reg.RegisterPacket(typeof(ExamplePacket));
 
 Force register
 ==============
 You can register a packet at a specific ID using `ForceRegisterPacket()`.
 
-.. code-block:: csharp
+.. tabs::
+    .. code-tab:: csharp
 
-    using PacketLib.Packet;
+        using PacketLib.Packet;
 
-    var reg = new PacketRegistry();
-    reg.ForceRegisterPacket(typeof(ExamplePacket), (ushort)10); // Registers the packet at index 10
+        var reg = new PacketRegistry();
+        reg.ForceRegisterPacket(typeof(ExamplePacket), (ushort)10); // Registers the packet at index 10
