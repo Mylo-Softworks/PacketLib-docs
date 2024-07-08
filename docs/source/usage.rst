@@ -2,7 +2,7 @@ Usage
 #####
 
 .. note::
-    For information about protocols, see [transmitters](transmitters).
+    For information about protocols, see :ref:`transmitters`.
 
 .. warning::
     Both client and server need to be polled regularly. Packets are processed during `Poll()` calls.
